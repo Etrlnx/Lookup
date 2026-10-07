@@ -1,0 +1,115 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Zero-size pivot, centered by flexbox (not math) -- the single source of
+   truth for "center of the viewport" that every node and edge below hangs off. */
+.anchor {
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+/* Plain (non-animated) positioning wrapper: shrink-wraps to its node, then
+   centers that box on (dx, dy) via transform. Kept separate from the
+   motion.div below so Framer's own animated transform (scale/layout) never
+   collides with this static centering transform. */
+.node-slot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.node {
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.node-label {
+  width: 100%;
+}
+
+.node-desc {
+  margin: 10px 0 0;
+  padding-left: 1.1em;
+  width: 100%;
+  text-align: left;
+  font-size: 0.75em;
+  line-height: 1.35;
+}
+
+.node-desc li {
+  margin-bottom: 4px;
+}
+
+.node-root {
+  width: 300px;
+  min-height: 110px;
+  font-size: 1.1rem;
+  padding: 24px 18px;
+}
+
+.node-center {
+  width: 300px;
+  min-height: 120px;
+  font-size: 1.15rem;
+  padding: 28px 20px;
+}
+
+.node-ring {
+  width: 180px;
+  min-height: 70px;
+  font-size: 0.95rem;
+  padding: 16px 12px;
+}
+
+.node-leaf {
+  width: 150px;
+  min-height: 56px;
+  font-size: 0.85rem;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+.node-leaf.expanded {
+  width: 260px;
+}
+
+/* Lines pivot at the anchor point itself (left:0, vertically centered via
+   top:-1px for the 2px height) and grow outward -- the origin is always the
+   exact center of the viewport / center node, never its edge. */
+.edge {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  height: 2px;
+  background: #fff;
+  transform-origin: 0% 50%;
+  pointer-events: none;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}

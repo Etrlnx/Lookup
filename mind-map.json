@@ -1,0 +1,193 @@
+{
+  "name": "AI Engineer Roadmap: CS Fundamentals -> Full-Stack -> DevOps -> ML/DL/XAI -> Finance",
+  "children": [
+    {
+      "name": "1. CS & Software Engineering Fundamentals",
+      "children": [
+        {
+          "name": "Programming",
+          "children": [
+            { "name": "Python", "children": ["OOP", "typing", "exceptions", "iterators/generators", "decorators", "async/await", "package management", "virtual environments"] },
+            { "name": "Go", "children": ["basics", "structs/interfaces", "concurrency", "HTTP services"] }
+          ]
+        },
+        {
+          "name": "Git/GitHub",
+          "children": ["branching", "merging/rebasing", "pull requests", ".gitignore", "basic Git workflows"]
+        },
+        {
+          "name": "Software Design",
+          "children": ["modular architecture", "separation of concerns", "SOLID basics", "design patterns (common/useful only)", "dependency management", "configuration/environment variables", "logging", "error handling"]
+        },
+        {
+          "name": "Testing",
+          "children": ["unit tests", "integration tests", "API tests"]
+        },
+        { "name": "Documentation", "children": [] }
+      ]
+    },
+    {
+      "name": "2. Full-Stack Engineering",
+      "children": [
+        {
+          "name": "Backend",
+          "children": [
+            {
+              "name": "HTTP / Web fundamentals",
+              "children": ["HTTP methods", "status codes", "headers", "cookies", "JSON", "REST APIs", "HTTPS/TLS basics", "WebSockets (basic)"]
+            },
+            {
+              "name": "FastAPI",
+              "children": ["routing", "request/response models", "Pydantic", "dependency injection", "middleware", "authentication", "async endpoints", "background tasks", "API documentation", "error handling"]
+            },
+            {
+              "name": "Databases",
+              "children": [
+                { "name": "PostgreSQL", "children": ["tables/schema", "primary/foreign keys", "constraints", "joins", "indexes", "transactions", "ACID", "isolation levels", "query optimization", "connection pooling"] },
+                { "name": "ORM / database access", "children": ["SQLAlchemy", "migrations", "basic database design"] }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Frontend (engineering depth, not a new framework)",
+          "children": [
+            { "name": "React", "children": ["components", "props/state", "hooks", "context", "component composition", "forms", "API integration", "authentication state", "error/loading states", "performance basics"] },
+            { "name": "Frontend architecture", "children": ["routing", "state management", "API client structure", "environment configuration", "reusable components", "TypeScript basics/usage"] },
+            { "name": "Web fundamentals", "children": ["DOM", "browser lifecycle", "CORS", "local/session storage", "cookies", "authentication flows"] }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3. DevOps & Infrastructure",
+      "children": [
+        {
+          "name": "Containerization — Docker (master before Kubernetes)",
+          "children": [
+            { "name": "Docker fundamentals", "children": ["images", "containers", "Dockerfile", "layers", "build context", ".dockerignore", "registries"] },
+            { "name": "Container networking", "children": ["environment variables", "volumes", "bind mounts", "port mapping", "resource limits"] },
+            { "name": "Docker Compose", "children": ["docker-compose.yml", "services", "networks", "volumes", "environment configuration", "dependencies between services", "multi-container applications"] },
+            { "name": "Practical target", "children": ["containerize React -> FastAPI -> PostgreSQL -> ML model, bring up with `docker compose up -d`"] }
+          ]
+        },
+        {
+          "name": "Linux + Server Fundamentals",
+          "children": ["filesystem", "processes/threads", "permissions", "users/groups", "SSH", "environment variables", "systemd/system services", "ports", "DNS basics", "firewall basics", "CPU/RAM/storage monitoring", "process management", "logs", "bash basics"]
+        },
+        {
+          "name": "Networking fundamentals",
+          "children": ["IP addresses", "subnets", "TCP/UDP", "ports", "DNS", "HTTP/HTTPS", "reverse proxy", "load balancing", "NAT", "TLS certificates"]
+        },
+        {
+          "name": "Nginx",
+          "children": ["reverse proxy", "static file serving", "TLS termination", "routing", "basic load balancing"]
+        },
+        {
+          "name": "CI/CD",
+          "children": [
+            { "name": "CI", "children": ["Git push/PR", "automated tests", "linting", "building", "Docker image creation", "image registry"] },
+            { "name": "CD", "children": ["deployment", "environment configuration", "rolling deployment", "rollback", "secrets"] },
+            { "name": "Platform", "children": ["GitHub Actions (sufficient initially)", "pipeline: GitHub -> CI -> Test -> Build image -> Push image -> Deploy"] }
+          ]
+        },
+        {
+          "name": "Kubernetes (only after Docker + networking + deployment make sense)",
+          "children": [
+            { "name": "Core concepts", "children": ["cluster", "node", "pod", "deployment", "service", "namespace", "configmap", "secret", "ingress"] },
+            { "name": "Operational concepts", "children": ["scaling", "rolling updates", "rollbacks", "health checks", "resource requests/limits", "persistent storage", "service discovery"] },
+            { "name": "Eventually", "children": ["horizontal pod autoscaler", "GPU workloads", "Helm", "basic Kubernetes debugging"] }
+          ]
+        },
+        {
+          "name": "Message Queues / Asynchronous Systems",
+          "children": [
+            { "name": "Concepts", "children": ["producer", "consumer", "queue", "topic", "partition", "offset", "acknowledgement", "retry", "dead-letter queue", "idempotency", "event-driven architecture"] },
+            { "name": "Technology", "children": ["Kafka (preferred over RabbitMQ for this track)", "example pipeline: transaction -> Kafka -> fraud detection service -> risk score -> alert system", "Celery/Redis as a later addition"] }
+          ]
+        },
+        {
+          "name": "Cloud (pick one — AWS default)",
+          "children": [
+            { "name": "Core AWS", "children": ["EC2", "S3", "IAM", "VPC", "RDS", "CloudWatch", "ECR", "Load Balancer"] },
+            { "name": "ML-specific (SageMaker)", "children": ["model deployment", "training jobs", "model registry", "endpoint monitoring"] },
+            { "name": "Pipeline", "children": ["Docker -> ECR -> EC2/Kubernetes/SageMaker -> Model endpoint"] }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4. Security (cross-cutting: app, infra, ML)",
+      "children": [
+        { "name": "Application security", "children": ["authentication", "authorization", "OAuth2", "JWT", "API keys", "password hashing", "secrets management"] },
+        { "name": "API security", "children": ["rate limiting", "input validation", "CORS", "HTTPS", "request authentication"] },
+        { "name": "Infrastructure security", "children": ["IAM", "network segmentation", "firewalls/security groups", "secret management", "least privilege"] },
+        { "name": "ML-specific security", "children": ["data poisoning", "model theft", "adversarial inputs", "prompt injection (RAG/LLM systems)", "sensitive-data leakage"] }
+      ]
+    },
+    {
+      "name": "5. ML Systems Engineering (bridge from SWE into ML)",
+      "children": [
+        {
+          "name": "Model Serving",
+          "children": [
+            { "name": "FastAPI model serving", "children": ["load trained model", "expose /predict", "validate input", "preprocess data", "run inference", "return predictions", "handle errors", "log requests", "measure latency", "manage model versions"] },
+            { "name": "ML-specific serving concepts", "children": ["batch inference", "online inference", "offline inference", "synchronous inference", "asynchronous inference", "CPU vs GPU inference", "model loading / cold starts", "concurrency", "throughput", "latency", "model serialization"] },
+            { "name": "Specialized framework (pick one)", "children": ["BentoML", "NVIDIA Triton"] }
+          ]
+        },
+        {
+          "name": "MLOps",
+          "children": [
+            { "name": "Experiment tracking (MLflow)", "children": ["parameters", "metrics", "artifacts", "experiments", "runs"] },
+            { "name": "Model management", "children": ["model registry", "model versions", "promotion", "rollback"] },
+            { "name": "Data management", "children": ["dataset versioning (DVC)", "data lineage"] },
+            { "name": "ML pipelines", "children": ["data -> validation -> preprocessing -> training -> evaluation -> model registry -> deployment"] },
+            { "name": "Automated retraining", "children": ["new data -> validation -> retraining -> evaluation -> model approval -> deployment"] }
+          ]
+        },
+        {
+          "name": "ML Monitoring / Observability",
+          "children": [
+            { "name": "Infrastructure monitoring", "children": ["CPU", "RAM", "GPU", "disk", "network", "request rate", "latency", "errors"] },
+            { "name": "Model monitoring", "children": ["prediction distribution", "data drift", "concept drift", "feature drift", "model performance", "class distribution", "false positives/negatives"] },
+            { "name": "Tools", "children": ["Prometheus", "Grafana"] },
+            { "name": "Explainability monitoring (specialization angle, not a prerequisite)", "children": ["feature attribution changes", "explanation stability", "model behaviour changes"] }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "6. Machine Learning, Deep Learning & XAI",
+      "children": [
+        { "name": "Core ML & DL theory", "children": ["gap in source notes — fill in before pivoting to finance ML: classical ML algorithms, model evaluation, neural network fundamentals, deep learning architectures"] },
+        { "name": "Explainability (XAI) techniques", "children": ["SHAP", "LIME", "feature attribution", "counterfactual explanations", "attention analysis", "GNNExplainer"] }
+      ]
+    },
+    {
+      "name": "7. Full-Stack Integration Capstone",
+      "children": [
+        { "name": "Target architecture", "children": ["React -> Nginx -> FastAPI -> {PostgreSQL, Redis/Kafka, ML Model -> MLflow}", "Docker -> CI/CD -> Cloud -> Monitoring"] },
+        { "name": "Goal", "children": ["be able to explain every arrow in the architecture"] }
+      ]
+    },
+    {
+      "name": "8. Finance Domain Knowledge (only after engineering foundation)",
+      "children": [
+        { "name": "Financial markets", "children": ["cash markets", "derivatives", "equities", "bonds", "FX", "commodities", "futures", "options", "asset classes"] },
+        { "name": "Banking", "children": ["payments", "accounts", "transactions", "credit", "lending"] },
+        { "name": "Risk & Compliance", "children": ["AML", "KYC", "fraud"] },
+        { "name": "Quantitative concepts", "children": ["returns", "volatility", "correlation", "covariance", "probability", "time series", "risk metrics"] }
+      ]
+    },
+    {
+      "name": "9. Finance ML Specialization (ML/DL/XAI applied to banking)",
+      "children": [
+        { "name": "Fraud", "children": ["transaction classification", "anomaly detection", "fraud scoring", "imbalanced datasets", "graph-based fraud detection", "fraud rings", "real-time detection"] },
+        { "name": "Risk", "children": ["credit risk", "default prediction", "market risk", "operational risk", "model risk"] },
+        { "name": "Document intelligence", "children": ["financial RAG", "financial NLP", "document extraction", "regulatory documents", "reports", "KYC/AML documents"] },
+        { "name": "Applied explainability", "children": ["SHAP/LIME/feature attribution on fraud & risk models", "counterfactual explanations for credit decisions", "attention analysis for financial NLP/RAG", "GNNExplainer for fraud-ring graphs", "model monitoring + explanation stability in production"] }
+      ]
+    }
+  ]
+}

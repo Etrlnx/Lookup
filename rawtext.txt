@@ -1,0 +1,548 @@
+1. Software Engineering Fundamentals
+Programming
+Python
+OOP
+typing
+exceptions
+iterators/generators
+decorators
+async/await
+package management
+virtual environments
+Go basics
+structs/interfaces
+concurrency
+HTTP services
+Git/GitHub
+branching
+merging/rebasing
+pull requests
+.gitignore
+basic Git workflows
+Software design
+Modular architecture
+Separation of concerns
+SOLID basics
+Design patterns — only common/useful ones
+Dependency management
+Configuration/environment variables
+Logging
+Error handling
+Testing
+unit tests
+integration tests
+API tests
+Documentation
+2. Backend Engineering
+HTTP / Web fundamentals
+HTTP methods
+Status codes
+Headers
+Cookies
+JSON
+REST APIs
+HTTPS/TLS basics
+WebSockets — basic understanding
+FastAPI
+Routing
+Request/response models
+Pydantic
+Dependency injection
+Middleware
+Authentication
+Async endpoints
+Background tasks
+API documentation
+Error handling
+Databases
+
+PostgreSQL
+
+Tables/schema
+Primary/foreign keys
+Constraints
+Joins
+Indexes
+Transactions
+ACID
+Isolation levels
+Query optimization
+Connection pooling
+ORM / database access
+SQLAlchemy
+Migrations
+Basic database design
+3. Frontend Engineering
+
+Since you already have substantial React/Tailwind exposure, focus on engineering depth, not learning another frontend framework.
+
+React
+Components
+Props/state
+Hooks
+Context
+Component composition
+Forms
+API integration
+Authentication state
+Error/loading states
+Performance basics
+Frontend architecture
+Routing
+State management
+API client structure
+Environment configuration
+Reusable components
+TypeScript basics/usage
+Web fundamentals
+DOM
+Browser lifecycle
+CORS
+Local/session storage
+Cookies
+Authentication flows
+4. Containerization — Docker
+
+Know this properly before Kubernetes.
+
+Docker fundamentals
+Images
+Containers
+Dockerfile
+Layers
+Build context
+.dockerignore
+Registries
+Container networking
+Environment variables
+Volumes
+Bind mounts
+Port mapping
+Resource limits
+Docker Compose
+docker-compose.yml
+Services
+Networks
+Volumes
+Environment configuration
+Dependencies between services
+Multi-container applications
+Practical target
+
+Be able to containerize:
+
+React frontend
+      ↓
+FastAPI backend
+      ↓
+PostgreSQL
+      ↓
+ML model
+
+and bring the entire system up with:
+
+docker compose up -d
+5. Linux + Server Fundamentals
+
+This is important for actually deploying things.
+
+Linux filesystem
+Processes
+Threads
+Permissions
+Users/groups
+SSH
+Environment variables
+System services
+Ports
+DNS basics
+Firewall basics
+CPU/RAM/storage monitoring
+Process management
+Logs
+systemd
+Bash basics
+Networking fundamentals
+IP addresses
+Subnets
+TCP/UDP
+Ports
+DNS
+HTTP/HTTPS
+Reverse proxy
+Load balancing
+NAT
+TLS certificates
+Nginx
+Reverse proxy
+Static file serving
+TLS termination
+Routing
+Basic load balancing
+6. CI/CD
+
+Understand the software delivery pipeline.
+
+CI
+Git push/PR
+Automated tests
+Linting
+Building
+Docker image creation
+Image registry
+CD
+Deployment
+Environment configuration
+Rolling deployment
+Rollback
+Secrets
+Learn one platform
+GitHub Actions — sufficient initially
+
+Understand:
+
+GitHub
+ ↓
+CI
+ ↓
+Test
+ ↓
+Build Docker image
+ ↓
+Push image
+ ↓
+Deploy
+7. Model Serving
+
+This is where your software engineering starts intersecting directly with ML.
+
+FastAPI model serving
+
+Know how to:
+
+Load a trained model
+Expose /predict
+Validate input
+Preprocess data
+Run inference
+Return predictions
+Handle errors
+Log requests
+Measure latency
+Manage model versions
+ML-specific serving concepts
+Batch inference
+Online inference
+Offline inference
+Synchronous inference
+Asynchronous inference
+CPU vs GPU inference
+Model loading
+Cold starts
+Concurrency
+Throughput
+Latency
+Model serialization
+Then learn one specialized framework
+
+I'd choose:
+
+BentoML OR NVIDIA Triton
+
+You do not need to learn FastAPI + TorchServe + BentoML + Triton simultaneously.
+
+8. Message Queues / Asynchronous Systems
+
+Learn the underlying concepts first.
+
+Concepts
+Producer
+Consumer
+Queue
+Topic
+Partition
+Offset
+Acknowledgement
+Retry
+Dead-letter queue
+Idempotency
+Event-driven architecture
+Technology
+
+For your goals:
+
+Kafka > RabbitMQ
+
+Learn Kafka sufficiently to understand:
+
+Transaction
+    ↓
+Kafka
+    ↓
+Fraud detection service
+    ↓
+Risk score
+    ↓
+Alert system
+
+You can learn Celery/Redis later if needed.
+
+9. Kubernetes
+
+Only after Docker + networking + deployment make sense.
+
+Core concepts
+Cluster
+Node
+Pod
+Deployment
+Service
+Namespace
+ConfigMap
+Secret
+Ingress
+Operational concepts
+Scaling
+Rolling updates
+Rollbacks
+Health checks
+Resource requests/limits
+Persistent storage
+Service discovery
+Eventually
+Horizontal Pod Autoscaler
+GPU workloads
+Helm
+Basic Kubernetes debugging
+
+You do not need to become a Kubernetes administrator.
+
+For an ML engineer, understanding how your model service is deployed and scaled is the useful level.
+
+10. MLOps
+
+Now connect your ML knowledge to the engineering infrastructure.
+
+Experiment tracking
+MLflow
+Parameters
+Metrics
+Artifacts
+Experiments
+Runs
+Model management
+Model registry
+Model versions
+Promotion
+Rollback
+Data management
+Dataset versioning
+DVC
+Data lineage
+ML pipelines
+
+Understand:
+
+Data
+ ↓
+Validation
+ ↓
+Preprocessing
+ ↓
+Training
+ ↓
+Evaluation
+ ↓
+Model registry
+ ↓
+Deployment
+Automated retraining
+New data
+Validation
+Retraining
+Evaluation
+Model approval
+Deployment
+11. ML Monitoring / Observability
+Infrastructure monitoring
+CPU
+RAM
+GPU
+Disk
+Network
+Request rate
+Latency
+Errors
+Model monitoring
+Prediction distribution
+Data drift
+Concept drift
+Feature drift
+Model performance
+Class distribution
+False positives/negatives
+Tools
+Prometheus
+Grafana
+For your specialization
+
+Add:
+
+Explainability monitoring
+Feature attribution changes
+Explanation stability
+Model behaviour changes
+
+This could become a very good specialization angle, but treat it as an advanced extension rather than a prerequisite.
+
+12. Cloud
+
+Pick one cloud.
+
+For your purposes, AWS is a reasonable default.
+
+Core AWS
+EC2
+S3
+IAM
+VPC
+RDS
+CloudWatch
+ECR
+Load Balancer
+ML-specific
+SageMaker
+Model deployment
+Training jobs
+Model registry
+Endpoint monitoring
+Understand
+Docker
+   ↓
+ECR
+   ↓
+EC2 / Kubernetes / SageMaker
+   ↓
+Model endpoint
+
+Don't attempt to memorize every AWS service.
+
+13. Security
+Application security
+Authentication
+Authorization
+OAuth2
+JWT
+API keys
+Password hashing
+Secrets management
+API security
+Rate limiting
+Input validation
+CORS
+HTTPS
+Request authentication
+Infrastructure security
+IAM
+Network segmentation
+Firewalls/security groups
+Secret management
+Least privilege
+ML-specific security
+Data poisoning
+Model theft
+Adversarial inputs
+Prompt injection for RAG/LLM systems
+Sensitive-data leakage
+14. Full-Stack Integration
+
+At this point, build an actual system rather than isolated tutorials.
+
+Target architecture
+React
+  ↓
+Nginx
+  ↓
+FastAPI
+  ├── PostgreSQL
+  ├── Redis/Kafka
+  └── ML Model
+         ↓
+     MLflow
+         
+Docker
+  ↓
+CI/CD
+  ↓
+Cloud
+  ↓
+Monitoring
+
+You should be able to explain every arrow in that architecture.
+
+15. Finance Domain
+
+Only after you have the engineering foundation.
+
+Financial fundamentals
+Financial markets
+Cash markets
+Derivatives
+Equities
+Bonds
+FX
+Commodities
+Futures
+Options
+Asset classes
+Banking
+Payments
+Accounts
+Transactions
+Credit
+Lending
+Risk
+AML
+KYC
+Fraud
+Quantitative concepts
+Returns
+Volatility
+Correlation
+Covariance
+Probability
+Time series
+Risk metrics
+16. Finance ML
+
+Then build your specialization.
+
+Fraud
+Transaction classification
+Anomaly detection
+Fraud scoring
+Imbalanced datasets
+Graph-based fraud detection
+Fraud rings
+Real-time detection
+Risk
+Credit risk
+Default prediction
+Market risk
+Operational risk
+Model risk
+Document intelligence
+Financial RAG
+Financial NLP
+Document extraction
+Regulatory documents
+Reports
+KYC/AML documents
+Explainability
+SHAP
+LIME
+Feature attribution
+Counterfactual explanations
+Attention analysis
+GNNExplainer
+Model monitoring + explanation stability
